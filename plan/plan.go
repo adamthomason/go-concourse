@@ -1,7 +1,7 @@
 package plan
 
-type Plan struct{}
-
-func New() *Plan {
-	return &Plan{}
+type PlanItem interface {
+	EnableItem()
 }
+
+type Plan []PlanItem
