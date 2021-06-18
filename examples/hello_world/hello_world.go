@@ -12,11 +12,11 @@ import (
 func main() {
 	pipeline := pipelines.New()
 
-	helloWorldPlan := plans.Plan{
+	helloWorldPlan := &plans.Plan{
 		task.New("simple-task", "", ""),
 	}
 
-	helloWorldJob := jobs.New("job", &helloWorldPlan)
+	helloWorldJob := jobs.New("job", helloWorldPlan)
 
 	pipeline.AttachJob(helloWorldJob)
 
