@@ -13,4 +13,4 @@ go get github.com/adamthomason/go-concourse
 
 ## Examples
 
-Various examples can be found in the `examples` directory
+Various examples can be found in the [examples](examples) directory
