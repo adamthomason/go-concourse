@@ -8,7 +8,6 @@ import (
 	"github.com/adamthomason/go-concourse/pipelines"
 	"github.com/adamthomason/go-concourse/plans"
 	"github.com/adamthomason/go-concourse/plans/get"
-	"github.com/adamthomason/go-concourse/plans/task"
 	"github.com/adamthomason/go-concourse/resources"
 	"github.com/adamthomason/go-concourse/sources"
 	"github.com/adamthomason/go-concourse/types"
@@ -37,7 +36,7 @@ func main() {
 	buildJobPlan := &plans.Plan{
 		get.New(golangMockGit.Name, true),
 		get.New(golang_1_16_x_image.Name, true),
-		task.New("run-tests", golang_1_16_x_image.Name, "example config"),
+		// task.New("run-tests", golang_1_16_x_image.Name, "example config"),
 	}
 
 	// Create the job and attach our plan

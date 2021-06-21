@@ -2,6 +2,9 @@ package pipelines
 
 import (
 	"github.com/adamthomason/go-concourse/jobs"
+	"github.com/adamthomason/go-concourse/pipelines/display"
+	"github.com/adamthomason/go-concourse/pipelines/groups"
+	"github.com/adamthomason/go-concourse/pipelines/varsource"
 	"github.com/adamthomason/go-concourse/resources"
 	"github.com/adamthomason/go-concourse/resourcetypes"
 	"gopkg.in/yaml.v2"
@@ -13,6 +16,9 @@ type Pipeline struct {
 	Jobs          []*jobs.Job                   `yaml:"jobs"`
 	Resources     []*resources.Resource         `yaml:"resources,omitempty"`
 	ResourceTypes []*resourcetypes.ResourceType `yaml:"resource_types,omitempty"`
+	VarSources    []*varsource.VarSource        `yaml:"var_sources,omitempty"`
+	Groups        []*groups.GroupConfig         `yaml:"groups,omitempty"`
+	Display       *display.DisplayConfig        `yaml:"display,omitempty"`
 }
 
 // New is a helper function to generate a new Pipeline struct and

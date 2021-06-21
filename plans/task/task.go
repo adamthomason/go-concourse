@@ -1,17 +1,19 @@
 package task
 
+import (
+	"github.com/adamthomason/go-concourse/plans/task/config"
+)
+
 type Task struct {
-	Task   string `yaml:"task"`
-	Image  string `yaml:"image"`
-	Config string `yaml:"config"`
+	Task   string         `yaml:"task"`
+	Config *config.Config `yaml:"config"`
 }
 
 func (t *Task) EnableItem() {}
 
-func New(task, image, config string) *Task {
+func New(task string, taskConfig *config.Config) *Task {
 	return &Task{
 		Task:   task,
-		Image:  image,
-		Config: config,
+		Config: taskConfig,
 	}
 }
